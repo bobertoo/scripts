@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+git remote -v |
+grep push |
+ruby -ne 'puts "GitHub URL: " +
+$_.split[1]
+.gsub("\.git", "")
+.gsub("git\@", "www\.")
+.gsub(":", "/")'
